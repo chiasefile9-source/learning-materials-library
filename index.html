@@ -3,121 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link-in-Bio & Digital Marketing</title>
+    <title>Thư Viện Điện Tử - VTuyen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Cấu hình chung */
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
         body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f172a; /* Màu tối sang trọng */
-            color: white;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        /* Container chính */
-        .container {
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-            padding-top: 50px;
-        }
-
-        /* Avatar */
-        .profile-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 3px solid #38bdf8;
-            margin-bottom: 20px;
-        }
-
-        /* Tiêu đề */
-        h1 { font-size: 1.5rem; margin-bottom: 5px; }
-        p.bio { color: #94a3b8; font-size: 0.9rem; margin-bottom: 30px; }
-
-        /* Nút bấm (Links) */
-        .link-btn {
-            display: block;
-            background-color: #1e293b;
-            color: white;
-            text-decoration: none;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 12px;
-            border: 1px solid #334155;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .link-btn:hover {
-            transform: scale(1.03);
-            background-color: #334155;
-            border-color: #38bdf8;
-        }
-
-        /* Nút nổi bật (Highlight) */
-        .featured {
-            background: linear-gradient(90deg, #38bdf8, #818cf8);
-            border: none;
-        }
-
-        /* ----- CSS cho Pop-up ----- */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: none; /* Ẩn mặc định */
             justify-content: center;
             align-items: center;
-            z-index: 1000;
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        .popup {
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 20px;
-            width: 80%;
-            max-width: 400px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-
-        .popup h2 { font-size: 1.2rem; color: #38bdf8; }
-        .popup input {
+        .container {
+            max-width: 500px;
             width: 100%;
-            padding: 12px;
-            margin: 15px 0;
-            border-radius: 8px;
-            border: 1px solid #334155;
-            background: #0f172a;
-            color: white;
-            box-sizing: border-box;
+            text-align: center;
         }
 
-        .popup button {
-            background: #38bdf8;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
+        .profile-header {
+            margin-bottom: 30px;
         }
 
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            cursor: pointer;
-            font-size: 20px;
+        .profile-header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .profile-header p {
+            font-size: 1rem;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .link-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            display: block;
+            border: 1px solid #e2e8f0;
+        }
+
+        .link-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .link-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .link-description {
+            color: var(--text-color);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .emoji {
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
             color: #94a3b8;
         }
     </style>
@@ -125,50 +95,25 @@
 <body>
 
     <div class="container">
-        <img src="https://via.placeholder.com/100" alt="Avatar" class="profile-img">
-        
-        <h1>@Tên_Của_Bạn</h1>
-        <p class="bio">Digital Creator | Chuyên gia xây dựng hệ thống thu nhập thụ động</p>
+        <header class="profile-header">
+            <h1>Thư Viện Học Tập</h1>
+            <p>Nơi tổng hợp kiến thức và tài liệu hỗ trợ học tập hiệu quả dành cho học sinh.</p>
+        </header>
 
-        <a href="#" class="link-btn featured">🚀 Lộ trình 0-100tr với Sản phẩm số (UBC)</a>
-        <a href="#" class="link-btn">📚 Tải Ebook miễn phí: 10 bước Faceless Marketing</a>
-        <a href="#" class="link-btn">💬 Tham gia nhóm Zalo hỗ trợ 1:1</a>
-        <a href="#" class="link-btn">📺 Kênh YouTube chia sẻ kiến thức</a>
-        <a href="#" class="link-btn">🛒 Cửa hàng công cụ Affiliate</a>
+        <main>
+            <a href="https://drive.google.com/drive/folders/1G07LVX36gNEqi0KksYWz0lI1JG_eF7rN?usp=sharing" class="link-card" target="_blank">
+                <span class="link-title">By VTuyen - Not sharing</span>
+                <span class="link-description">
+                    Toàn bộ File Bài tập + Soạn Văn + KHTN. Truy cập vào thư viện điện tử và học tập hoàn toàn tự do tại đây!
+                </span>
+                <span class="emoji">👇</span>
+            </a>
+        </main>
+
+        <footer>
+            &copy; 2026 Designed by VTuyen
+        </footer>
     </div>
-
-    <div class="overlay" id="popupOverlay">
-        <div class="popup">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <h2>🎁 Nhận Quà Tặng Miễn Phí!</h2>
-            <p>Để lại Email để nhận ngay lộ trình xây dựng thương hiệu cá nhân năm 2026.</p>
-            <form id="emailForm">
-                <input type="email" placeholder="Nhập email của bạn..." required>
-                <button type="submit">GỬI CHO TÔI NGAY</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        // Tự động hiển thị Pop-up sau 3 giây khi vào trang
-        window.onload = function() {
-            setTimeout(function() {
-                document.getElementById('popupOverlay').style.display = 'flex';
-            }, 3000);
-        };
-
-        // Hàm đóng Pop-up
-        function closePopup() {
-            document.getElementById('popupOverlay').style.display = 'none';
-        }
-
-        // Xử lý khi gửi form
-        document.getElementById('emailForm').onsubmit = function(e) {
-            e.preventDefault();
-            alert('Cảm ơn bạn! Tài liệu đã được gửi vào email.');
-            closePopup();
-        };
-    </script>
 
 </body>
 </html>
