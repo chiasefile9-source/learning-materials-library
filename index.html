@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thư Viện Điện Tử - VTuyen</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Thư Viện Điện Tử - By VTuyen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #2563eb;
             --bg-color: #f8fafc;
             --text-color: #1e293b;
             --card-bg: #ffffff;
-            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -30,90 +36,40 @@
             max-width: 500px;
             width: 100%;
             text-align: center;
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 24px;
+            shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
         }
 
-        .profile-header {
+        .logo-area {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        p {
+            color: #64748b;
+            line-height: 1.6;
             margin-bottom: 30px;
         }
 
-        .profile-header h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .profile-header p {
-            font-size: 1rem;
-            color: #64748b;
-            line-height: 1.5;
-        }
-
-        .link-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: var(--shadow);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        .main-link {
+            display: block;
+            background-color: var(--primary-color);
+            color: white;
             text-decoration: none;
-            display: block;
-            border: 1px solid #e2e8f0;
-        }
-
-        .link-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-            border-color: var(--primary-color);
-        }
-
-        .link-title {
-            color: var(--primary-color);
+            padding: 18px 25px;
+            border-radius: 12px;
             font-weight: 600;
-            font-size: 1.2rem;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .link-description {
-            color: var(--text-color);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .emoji {
-            display: block;
-            font-size: 1.5rem;
-            margin-top: 10px;
-        }
-
-        footer {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            color: #94a3b8;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <header class="profile-header">
-            <h1>Thư Viện Học Tập</h1>
-            <p>Nơi tổng hợp kiến thức và tài liệu hỗ trợ học tập hiệu quả dành cho học sinh.</p>
-        </header>
-
-        <main>
-            <a href="https://drive.google.com/drive/folders/1G07LVX36gNEqi0KksYWz0lI1JG_eF7rN?usp=sharing" class="link-card" target="_blank">
-                <span class="link-title">By VTuyen - Not sharing</span>
-                <span class="link-description">
-                    Toàn bộ File Bài tập + Soạn Văn + KHTN. Truy cập vào thư viện điện tử và học tập hoàn toàn tự do tại đây!
-                </span>
-                <span class="emoji">👇</span>
-            </a>
-        </main>
-
-        <footer>
-            &copy; 2026 Designed by VTuyen
-        </footer>
-    </div>
-
-</body>
-</html>
+            font-size: 1.1rem;
+            transition: transform 0.2
